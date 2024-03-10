@@ -1,0 +1,20 @@
+<project name="Practica1" default="javadoc" basedir=".">
+    <description>
+        Build file para generar Javadoc.
+    </description>
+
+    <!-- Define la ubicación del directorio src -->
+    <property name="src.dir" value="src"/>
+
+    <!-- Define la ubicación del directorio doc -->
+    <property name="doc.dir" value="doc"/>
+
+    <target name="javadoc">
+        <mkdir dir="${doc.dir}"/> <!-- Crea el directorio doc si no existe -->
+        <javadoc sourcepath="${src.dir}" destdir="${doc.dir}">
+            <fileset dir="${src.dir}">
+                <include name="**/*.java"/> <!-- Incluye todos los archivos .java -->
+            </fileset>
+        </javadoc>
+    </target>
+</project>
